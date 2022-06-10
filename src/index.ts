@@ -6,7 +6,6 @@ import { ReadableStreamBYOBRequest } from 'stream/web';
 const app = express();
 const port = process.env.PORT ||3002;
 
-
 app.use(cors()) 
 app.use(bodyParser.json())
 const videos = [
@@ -40,7 +39,7 @@ app.post('/videos', (req: Request, res: Response) => {
           "message": "Incorrect title",
           "field": "title" }
       ],
-      resultCode: 1
+     
     })
     return;
 
@@ -75,7 +74,7 @@ app.delete('/videos/:id',(req: Request, res: Response)=>{
           "message": "Incorrect title",
           "field": "title" }
       ],
-      resultCode: 1
+    
     })
     return
   }
