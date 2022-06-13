@@ -35,9 +35,9 @@ app.post('/videos', (req: Request, res: Response) => {
   let title= req.body.title
   if (!title || typeof title !=='string' || !title.trim() || title.length > 40){
     res.status(400).send({
-      "errorsMessages": [{
+      "errorsMessages": [{ 
           "message": "Incorrect title",
-          "field": "title" }
+          "field": "title" } 
       ],
      
     })
@@ -53,7 +53,7 @@ app.post('/videos', (req: Request, res: Response) => {
   videos.push(newVideo)
   res.status(201).send(newVideo)
 })
-app.delete('/videos/:id',(req: Request, res: Response)=>{
+app.delete('/videos/:id',(req: Request, res: Response)=>{ 
   // put your code here
   const id=+req.params.id;
   const index = videos.findIndex(v=>v.id===id)
